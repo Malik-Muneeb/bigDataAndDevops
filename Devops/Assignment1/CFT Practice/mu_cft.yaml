@@ -1,0 +1,34 @@
+
+Resources:
+  MuneebRepo:
+    Type: AWS::CodeCommit::Repository
+    Properties:
+      RepositoryName: "TestRepo"
+      RepositoryDescription: "a great repo"
+
+
+
+  DevPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: "DevPolicy"
+      PolicyDocument:
+        Statement:
+        - Effect: Deny
+          Action: [
+            'codecommit:GitPush',
+            'codecommit:DeleteBranch',
+            'codecommit:PutFile',
+            'codecommit:Merge*'
+            ]
+          Condition:
+           StringEqualsIfExists:
+            codecommit:References:
+            - refs/heads/master
+            - refs/heads/prod
+            - refs/heads/Stg
+            - refs/heads/develop
+           'Null':
+              codecommit:References: false
+
+      Groups: [!Ref 'MuneebDev']

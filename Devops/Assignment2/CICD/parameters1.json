@@ -1,0 +1,6 @@
+{ 
+    "Parameters":{ 
+        "ParameterKey":"MuneebS3BucketName", 
+        "ParameterValue":"muneeb-infrastructure-scripts-4" 
+    } 
+} 
