@@ -1,0 +1,2 @@
+@Muneeb Please write a program to generate all sentences where subject is in ["I", "You"] and verb is in ["Play", "Love"] and the object is in ["Hockey","Football"]. 
+Use a text file from the internet to read out all the subjects and map them respectiverly

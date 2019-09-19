@@ -1,0 +1,1 @@
+Write a lambda function which triggers other two lambda functions which will get data from RDS/DynamoDB(Two Tables) and then store it itno S3.
